@@ -85,11 +85,11 @@ Russian Central Bank).
 
 <b>The notebooks</b>
 
-> <b>Data wrangling</b>: explains the entire dataframe construction process.
+<b>Data wrangling</b>: explains the entire dataframe construction process.
 
-> <b>Data analysis</b>, where the dataset is used to explore and visualize the budget data
+<b>Data analysis</b>, where the dataset is used to explore and visualize the budget data
 
-> <b>The dashboard</b>, where the indicators-tracking dashboard is created and explained
+<b>The dashboard</b>, where the indicators-tracking dashboard is created and explained
 
 <b>Additional datasets</b>
 
@@ -97,17 +97,17 @@ There are also four intermediate datasets with more detailed information for 201
 and subsections), but this additional data is not translated into English and is differently structured. All four datasets can be useful in case there's a need
 to explore a budget item further:
 
-> final_data/revenue.csv - the regional revenues;
+final_data/revenue.csv - the regional revenues;
 
-> final_data/spending.csv - the regional spendings;
+final_data/spending.csv - the regional spendings;
 
-> final_data/fed_rev.csv - the federal revenues;
+final_data/fed_rev.csv - the federal revenues;
 
-> final_data/fed_spend.csv - the federal spendings.
+final_data/fed_spend.csv - the federal spendings.
 
 <b>The limitations to this project</b>
 
-> This is a test project with data only for the years 2011–2021 and no cumulative monthly data. It is possible to append to it in the future, using the same code.
+This is a test project with data only for the years 2011–2021 and no cumulative monthly data. It is possible to append to it in the future, using the same code.
 
-> There's no possibility to update the dataset at the moment because Russian officials have stopped publishing information on budget spending while there is a war
+There's no possibility to update the dataset at the moment because Russian officials have stopped publishing information on budget spending while there is a war
 in Ukraine.
