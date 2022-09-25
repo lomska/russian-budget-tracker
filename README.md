@@ -1,4 +1,4 @@
-The contains a synthesized dataset on the Russian federal and regional budget totals, items, and subitems, as well as a number of key economic indicators
+The project contains a synthesized dataset on the Russian federal and regional budget totals, items, and subitems, as well as a number of key economic indicators
 such as the population, real income, income per capita, and poverty level for the years 2011–2021, aggregated on the regional and country level.
 
 It is aimed to make the data easier to analyze for non-professionals in economics, namely, for journalists (like me).
