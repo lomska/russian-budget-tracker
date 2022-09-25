@@ -1,14 +1,13 @@
 The project contains a synthesized dataset on the Russian federal and regional budget totals, items, and subitems, as well as a number of key economic indicators
 such as the population, real income, income per capita, and poverty level for the years 2011–2021, aggregated on the regional and country level.
 
-It is aimed to make the data easier to analyze for non-professionals in economics, namely, for journalists (like me).
+This is an attempt to make the data easier to analyze for non-professionals in economics, namely, for journalists.
 
-There are three notebooks in the repository, where all the steps of the dataset creation are explained, and where it is used to analyze the budget data, visualize it
-(with Matplotlib, Seaborn, and Plotly), and create an interactive dashboard tracking the key economic indicators (in Plotly Dash).
+There are three notebooks in the repository, where all the steps of the dataset creation are explained, and where it is used to analyze the budget data, visualize it (with Matplotlib, Seaborn, and Plotly), and create an interactive dashboard tracking the key economic indicators (in Plotly Dash).
 
 <b>The dataset</b>
 
-> final_data/russian_budget_data.csv - The dataset is detailed down to the level of budget subitems.
+> final_data/russian_budget_data.csv - The dataset is detailed down to the level of budget subitems
 
 <b>The codes include:</b>
 
