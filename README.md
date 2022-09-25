@@ -94,7 +94,7 @@ Russian Central Bank).
 
 There are also four intermediate datasets with more detailed information for 2011–2021 (the programs, subprograms, etc. inside the revenue and spending subitems
 and subsections), but this additional data is not translated into English and is differently structured. All four datasets can be useful in case there's a need
-to explore a budget item further:
+to explore a particular budget item further:
 
 > final_data/revenue.csv - the regional revenues;
 
