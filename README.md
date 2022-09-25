@@ -106,7 +106,6 @@ to explore a particular budget item further:
 
 <b>The limitations to this project</b>
 
-> This is a test project with data only for the years 2011–2021 and no cumulative monthly data. It is possible to append to it in the future, using the same code.
+> This is a test project with data only for the years 2011–2021 and no cumulative monthly data. The cumulative data is possible to append to it in the future, using the same code.
 
-> There's no possibility to update the dataset at the moment because Russian officials have stopped publishing information on budget spending while there is a war
-in Ukraine.
+> There's no possibility (hopefully, temporarily) to update the dataset at the moment because Russian officials have stopped publishing information on regional budget spending while there is a war in Ukraine.
