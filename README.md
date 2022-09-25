@@ -8,7 +8,7 @@ There are three notebooks in the repository, where all the steps of the dataset 
 
 <b>The dataset</b>
 
-> /final_data/russian_budget_data.csv - The dataset is detailed down to the level of budget subitems.
+> final_data/russian_budget_data.csv - The dataset is detailed down to the level of budget subitems.
 
 <b>The codes include:</b>
 
@@ -97,13 +97,13 @@ There are also four intermediate datasets with more detailed information for 201
 and subsections), but this additional data is not translated into English and is differently structured. All four datasets can be useful in case there's a need
 to explore a budget item further:
 
-> /final_data/revenue.csv - the regional revenues;
+> final_data/revenue.csv - the regional revenues;
 
-> /final_data/spending.csv - the regional spendings;
+> final_data/spending.csv - the regional spendings;
 
-> /final_data/fed_rev.csv - the federal revenues;
+> final_data/fed_rev.csv - the federal revenues;
 
-> /final_data/fed_spend.csv - the federal spendings.
+> final_data/fed_spend.csv - the federal spendings.
 
 <b>The limitations to this project</b>
 
