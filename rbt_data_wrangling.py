@@ -5,6 +5,9 @@ from numpy.core.defchararray import find
 import glob
 import os
 
+import warnings
+warnings.filterwarnings('ignore', category=UserWarning, module='openpyxl')
+
 # INITIAL DATA ****************************************************************************************************************************************************
 
 # To construct the database for analysis, we'll synthesize several independent datasets:
