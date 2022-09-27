@@ -14,6 +14,19 @@
   margin-left: 5px;
 }
 body{
+    width:100%;
     background-color: #cdd8db;
     margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+table {
+    width:100%;
+}
+tr {
+    display: flex;
+}
+td:last-child {
+    flex: 1;
 }
