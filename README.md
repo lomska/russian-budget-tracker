@@ -13,7 +13,7 @@ There are two notebooks in the repository, where all the steps of the dataset cr
 
 <b>THE DASHBOARD</b>
 
-The indicators-tracking dashboard (in Plotly Dash) for this project is running [HERE](https://russian-budget-tracker.herokuapp.com/). There's only a desktop version available at the moment. The code from [rbt_tracking_dashboard_local_server.py](rbt_tracking_dashboard_local_server.py) allows to run it locally.
+This project's indicators-tracking dashboard (in Plotly Dash) is available [HERE](https://russian-budget-tracker.herokuapp.com/). There's only a desktop version available at the moment. The code from [rbt_tracking_dashboard_local_server.py](rbt_tracking_dashboard_local_server.py) shows how to run it locally.
 
 <b>THE DATASET</b>
 
