@@ -3,18 +3,6 @@ such as the population, real income, income per capita, and poverty level for th
 
 This is an attempt to make the data easier to analyze for non-professionals in economics, namely, for journalists.
 
-<b>THE NOTEBOOKS</b>
-
-There are two notebooks in the repository, where all the steps of the dataset creation are explained, and where it is used to analyze the budget data and visualize it (with Matplotlib, Seaborn, and Plotly). Below are the links to view them on [NBViewer](https://nbviewer.org/), with all the widgets, working hyperlinks, and all my comments:
-
-> The [Data Wrangling](https://nbviewer.org/github/lomska/russian-budget-tracker/blob/main/rbt_data_wrangling.ipynb) notebook explains the entire dataframe construction process step-by-step. This notebook corresponds to the [rbt_data_wrangling.py](rbt_data_wrangling.py) doc from the repository, the execution of which takes about 15 minutes. 
-
-> In the [Data Analysis](https://nbviewer.org/github/lomska/russian-budget-tracker/blob/main/rbt_data_analysis.ipynb) notebook, I use the dataset to explore and visualize the budget data. 
-
-<b>THE DASHBOARD</b>
-
-This project's indicators-tracking dashboard (in Plotly Dash) is available [HERE](https://russian-budget-tracker.herokuapp.com/). There's only a desktop version available at the moment. The code from [rbt_tracking_dashboard_local_server.py](rbt_tracking_dashboard_local_server.py) shows how to run it locally; the assets folder is necessary for that.
-
 <b>THE DATASET</b>
 
 > [final_data/russian_budget_data.csv](final_data/russian_budget_data.csv) - The dataset is detailed down to the level of budget subitems
@@ -47,6 +35,18 @@ This project's indicators-tracking dashboard (in Plotly Dash) is available [HERE
 
 <b>All the data is given in rubles</b> by default; there's a USDRUB indicator to convert it into dollars by the corresponding year's exchange rate (according to the
 Russian Central Bank).
+
+<b>THE NOTEBOOKS</b>
+
+There are two notebooks in the repository, where all the steps of the dataset creation are explained, and where it is used to analyze the budget data and visualize it (with Matplotlib, Seaborn, and Plotly). Below are the links to view them on [NBViewer](https://nbviewer.org/), with all the widgets, working hyperlinks, and all my comments:
+
+> The [Data Wrangling](https://nbviewer.org/github/lomska/russian-budget-tracker/blob/main/rbt_data_wrangling.ipynb) notebook explains the entire dataframe construction process step-by-step. This notebook corresponds to the [rbt_data_wrangling.py](rbt_data_wrangling.py) doc from the repository, the execution of which takes about 15 minutes. 
+
+> In the [Data Analysis](https://nbviewer.org/github/lomska/russian-budget-tracker/blob/main/rbt_data_analysis.ipynb) notebook, I use the dataset to explore and visualize the budget data. 
+
+<b>THE DASHBOARD</b>
+
+This project's indicators-tracking dashboard (in Plotly Dash) is available [HERE](https://russian-budget-tracker.herokuapp.com/). There's only a desktop version available at the moment. The code from [rbt_tracking_dashboard_local_server.py](rbt_tracking_dashboard_local_server.py) shows how to run it locally; the assets folder is necessary for that.
 
 <b>ADDITIONAL DATA</b>
 
