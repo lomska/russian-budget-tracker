@@ -1,3 +1,24 @@
+# This dashboard will show the money flows from the regions to the federal center and back in 2011–2021, as well as a number of
+# key  indicators for each region.
+
+# For the whole country
+
+# - the total number of regions-donors and dependent regions;
+# - the total amount of regional revenues, taxes paid to the state, transfers got from the state, and cumulative deficit/surplus;
+# - the regions' distribution according to the amount of cash flow with the state and the amount of their surplus or deficit, taking
+#   into account their population and their dwellers' average incomes;
+# - the top-10 regions according to the amount of taxes paid, transfers received, revenue made, and deficit;
+
+# - For each region
+
+# - the amount of revenue, tax paid to the state, transfers got from the state, and deficit/surplus;
+# - net cash flow with the state;
+# - the key revenue, key federal tax, and key spending for each year, and their amounts;
+# - input into common federal tax revenue;
+# - average income per capita in dollars;
+# - the population.
+
+
 import pandas as pd
 import numpy as np
 
@@ -11,6 +32,7 @@ import dash_bootstrap_components as dbc
 
 from collections import OrderedDict
 from dash import dash_table
+
 
 # THE DATA *********************************************************************************************************************************
 # ******************************************************************************************************************************************
@@ -248,20 +270,20 @@ app.layout = dbc.Container([
             dbc.Col(html.H1("Regions' Budgets Tracker"), width=7, align="center"),
             dbc.Col(html.A("About the project", href='https://github.com/lomska/russian-budget-tracker.git', target="_blank"),
                     width=2, align="center"),
-            dbc.Col([html.H6('Select a Year:', style={'width':'100%', 'height':'20%'}),
+            dbc.Col([html.H6('Select a Year:', style={'width': '100%', 'height': '20%'}),
                      dcc.Dropdown(id='slct_year', options=[
-                         {'label':'2011', 'value':2011},
-                         {'label':'2012', 'value':2012},
-                         {'label':'2013', 'value':2013},
-                         {'label':'2014', 'value':2014},
-                         {'label':'2015', 'value':2015},
-                         {'label':'2016', 'value':2016},
-                         {'label':'2017', 'value':2017},
-                         {'label':'2018', 'value':2018},
-                         {'label':'2019', 'value':2019},
-                         {'label':'2020', 'value':2020},
-                         {'label':'2021', 'value':2021}],
-                                  multi=False, value=2021, clearable=False, style={'width':'100%', 'height':'20%'}
+                         {'label': '2011', 'value':2011},
+                         {'label': '2012', 'value':2012},
+                         {'label': '2013', 'value':2013},
+                         {'label': '2014', 'value':2014},
+                         {'label': '2015', 'value':2015},
+                         {'label': '2016', 'value':2016},
+                         {'label': '2017', 'value':2017},
+                         {'label': '2018', 'value':2018},
+                         {'label': '2019', 'value':2019},
+                         {'label': '2020', 'value':2020},
+                         {'label': '2021', 'value':2021}],
+                                  multi=False, value=2021, clearable=False, style={'width': '100%', 'height': '20%'}
                                  )
                     ], width=3)
         ], className='mb-2 mt-2'),
@@ -269,66 +291,66 @@ app.layout = dbc.Container([
             dbc.Col([
                 dbc.Card([
                     dbc.CardBody([
-                        html.H6(['Donor', html.Br(), 'Regions'], style={'width':'100%', 'height':'20%'}, className="card-title"),
-                        html.H6(' ', style={'width':'100%', 'height':'10%'}),
-                        html.H4(id='content-donors', children='00', style={'width':'100%', 'height':'20%'})
+                        html.H6(['Donor', html.Br(), 'Regions'], style={'width': '100%', 'height': '20%'}, className="card-title"),
+                        html.H6(' ', style={'width': '100%', 'height': '10%'}),
+                        html.H4(id='content-donors', children='00', style={'width': '100%', 'height': '20%'})
                     ])
-                ], style={'height':'85%', 'textAlign':'center'}, color="dark", outline=True)
+                ], style={'height': '85%', 'textAlign': 'center'}, color="dark", outline=True)
             ], width=2),
             dbc.Col([
                 dbc.Card([
                     dbc.CardBody([
-                        html.H6('Dependent Regions', style={'width':'100%', 'height':'20%'}, className="card-title"),
-                        html.H6(' ', style={'width':'100%', 'height':'10%'}),
-                        html.H4(id='content-dependent', children='00', style={'width':'100%', 'height':'20%'})
+                        html.H6('Dependent Regions', style={'width': '100%', 'height': '20%'}, className="card-title"),
+                        html.H6(' ', style={'width': '100%', 'height': '10%'}),
+                        html.H4(id='content-dependent', children='00', style={'width': '100%', 'height': '20%'})
                     ])
-                ], style={'height':'85%', 'textAlign':'center'}, color="dark", outline=True)
+                ], style={'height': '85%', 'textAlign': 'center'}, color="dark", outline=True)
             ], width=2),
             dbc.Col([
                 dbc.Card([
                     dbc.CardBody([
-                        html.H6("Cumulative Own Revenues", style={'width':'100%', 'height':'20%'}, className="card-title"),
-                        html.H6(' ', style={'width':'100%', 'height':'10%'}),
-                        html.H4(id='content-ownrev', children='000', style={'width':'100%', 'height':'20%'})
+                        html.H6("Cumulative Own Revenues", style={'width': '100%', 'height': '20%'}, className="card-title"),
+                        html.H6(' ', style={'width': '100%', 'height': '10%'}),
+                        html.H4(id='content-ownrev', children='000', style={'width': '100%', 'height': '20%'})
                     ])
-                ], style={'height':'85%', 'textAlign':'center'}, color="dark", outline=True)
+                ], style={'height': '85%', 'textAlign': 'center'}, color="dark", outline=True)
             ], width=2),
             dbc.Col([
                 dbc.Card([
                     dbc.CardBody([
-                        html.H6('Tribute to the state', style={'width':'100%', 'height':'20%'}, className="card-title"),
-                        html.H6(' ', style={'width':'100%', 'height':'10%'}),
-                        html.H4(id='content-tax-to-fed', children='000', style={'width':'100%', 'height':'20%'})
+                        html.H6('Tribute to the state', style={'width': '100%', 'height': '20%'}, className="card-title"),
+                        html.H6(' ', style={'width': '100%', 'height': '10%'}),
+                        html.H4(id='content-tax-to-fed', children='000', style={'width': '100%', 'height': '20%'})
                     ])
-                ], style={'height':'85%', 'textAlign':'center'}, color="dark", outline=True)
+                ], style={'height': '85%', 'textAlign': 'center'}, color="dark", outline=True)
             ], width=2),
             dbc.Col([
                 dbc.Card([
                     dbc.CardBody([
-                        html.H6('Transfers from the state', style={'width':'100%', 'height':'20%'}, className="card-title"),
-                        html.H6(' ', style={'width':'100%', 'height':'10%'}),
-                        html.H4(id='content-transfers', children='00', style={'width':'100%', 'height':'20%'})
+                        html.H6('Transfers from the state', style={'width': '100%', 'height': '20%'}, className="card-title"),
+                        html.H6(' ', style={'width': '100%', 'height': '10%'}),
+                        html.H4(id='content-transfers', children='00', style={'width': '100%', 'height': '20%'})
                     ])
-                ], style={'height':'85%', 'textAlign':'center'}, color="dark", outline=True)
+                ], style={'height': '85%', 'textAlign': 'center'}, color="dark", outline=True)
             ], width=2),
             dbc.Col([
                 dbc.Card([
                     dbc.CardBody([
-                        html.H6(id='content-defsur', children='Deficit', style={'width':'100%', 'height':'20%'},
+                        html.H6(id='content-defsur', children='Deficit', style={'width': '100%', 'height': '20%'},
                                 className="card-title"),
-                        html.H6(' ', style={'width':'100%', 'height':'10%'}),
-                        html.H4(id='content-deficit', children='00', style={'width':'100%', 'height':'20%'})
+                        html.H6(' ', style={'width': '100%', 'height': '10%'}),
+                        html.H4(id='content-deficit', children='00', style={'width': '100%', 'height': '20%'})
                     ])
-                ], style={'height':'85%', 'textAlign':'center'}, color="dark", outline=True)
+                ], style={'height': '85%', 'textAlign': 'center'}, color="dark", outline=True)
             ], width=2)
         ], className='mb-0 mt-2'),
         dbc.Row([
             dbc.Col([
                 dbc.Card([
                     html.H4("Federal money suppliers, absorbers, and their input", className="card-title mt-3",
-                            style={'margin-left':'20px'}),
+                            style={'margin-left': '20px'}),
                     html.H6("Hover over the region to see info for the year:", className="card-subtitle",
-                            style={'margin-left':'20px'}),
+                            style={'margin-left': '20px'}),
                     dbc.CardBody([
                         dcc.Graph(id='treemap', figure={}),
                     ])
@@ -338,8 +360,10 @@ app.layout = dbc.Container([
         dbc.Row([
             dbc.Col([
                 dbc.Card([
-                    html.H4("Leaders of the year", className="card-title mt-3", style={'margin-left':'20px'}),
-                    html.H6("Choose your top-10:", className="card-subtitle", style={'margin-left':'20px'}),
+                    html.H4("Leaders of the year", className="card-title mt-3", style={'margin-left': '20px',
+                                                                                       'white-space': 'nowrap'}),
+                    html.H6("Choose your top-10:", className="card-subtitle", style={'margin-left': '20px',
+                                                                                     'white-space': 'nowrap'}),
                     dbc.CardBody([
                         html.Div(
                             [dbc.RadioItems(
@@ -354,6 +378,7 @@ app.layout = dbc.Container([
                                     {"label": "Earners", "value": 3},
                                     {'label': 'Deficits', 'value': 4}
                                 ],
+                                style={'width': '100%'},
                                 value=1,
                                 label_style={'font-size':9}
                             )], className="radio-group")
@@ -365,28 +390,30 @@ app.layout = dbc.Container([
             ], width=4),
             dbc.Col([
                 dbc.Card([
-                    html.H4("Regional money flows and balances", className="card-title mt-3", style={'margin-left':'20px'}),
+                    html.H4("Regional money flows and balances", className="card-title mt-3", style={'margin-left': '20px',
+                                                                                                     'white-space': 'nowrap'}),
                     html.H6("Hover over the region to see info for the year:", className="card-subtitle",
-                            style={'margin-left':'20px'}),
+                            style={'margin-left': '20px',
+                                   'white-space': 'nowrap'}),
                     dbc.CardBody([
                         dcc.Graph(id='scatter-chart', figure={}),
                         dcc.Store(id='store')
                     ]),
                     dbc.CardBody([
                         html.Tr([
-                            html.Td(html.H6('REGION INFO: ', style={'width':'120px'})),
+                            html.Td(html.H6('REGION INFO: ', style={'width': '100%'}), style={'width': '20%'}),
                             html.Td(html.H6(id='region_name', children='NA',
-                                            style={'padding-left': '10px', 'width':'200px', 'height':'20px'})),
+                                            style={'padding-left': '10px', 'width': '100%', 'height': '20px'}),
+                                    style={'width': '40%'}),
                             html.Td(dcc.Dropdown(id='regions-dpdn',
                                                  options=[],
                                                  multi=False,
                                                  value='All',
                                                  clearable=True,
-                                                 style={'width':'100%', 'height':'20%',
-                                                       'padding-left': '200px'}
-                                                )
+                                                 style={'width': '100%', 'height': '20%'}
+                                                ), style={'width': '40%'}
                                    )
-                        ]),
+                        ], style={'width': '100%'}),
                         dash_table.DataTable(id='datatable',
                                              data=[{}],
                                              columns=[{'name': '1', 'id': "1"},
@@ -395,15 +422,15 @@ app.layout = dbc.Container([
                                                       {'name': '4', 'id': "4"}],
                                              style_cell_conditional=[
                                                  {'if': {'column_id': '1'},
-                                                  'width': '25%', 'fontWeight':'bold'},
+                                                  'width': '25%', 'fontWeight': 'bold'},
                                                  {'if': {'column_id': '2'},
                                                   'width': '17%'},
                                                  {'if': {'column_id': '3'},
-                                                  'width': '25%', 'fontWeight':'bold'}
+                                                  'width': '25%', 'fontWeight': 'bold'}
                                              ],
-                                             style_cell={'fontSize':12, 'font-family':'sans-serif'},
+                                             style_cell={'fontSize':12, 'font-family': 'sans-serif', 'white-space': 'nowrap'},
                                              style_header = {'display': 'none'},
-                                             style_table={'height': 173},
+                                             style_table={'width': '100%'},
                                              style_as_list_view=True)
                     ])
                 ], color="dark", outline=True)
@@ -608,7 +635,7 @@ def update_bar(year, button):
                                     font=dict(size=11, color='#b82b27'), showarrow=False))
     
     fig_bar.update_layout(
-        height=467,
+        height=470,
         yaxis=dict(showgrid=False, showline=False, showticklabels=True, ticklen=0, tickfont = dict(size=10)),
         xaxis=dict(zeroline=False, showline=False, showticklabels=False, showgrid=True, ticklen=0, tickfont = dict(size=10)),
         margin=dict(l=140, r=10, t=10, b=2),
@@ -835,6 +862,7 @@ def update_table(year, chosen_scatter_region):
     
     df = pd.DataFrame(data)
     return region, df.to_dict('records')
+
 
 if __name__ == '__main__':
     app.run_server(debug=True, use_reloader=False)
